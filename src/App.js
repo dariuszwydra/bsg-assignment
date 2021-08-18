@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import { useEffect } from 'react';
+import MediaList from './MediaList/MediaList.js';
+import MediaPlayer from './MediaPlayer/MediaPlayer.js';
+
+// function to log in as Anonymous user
+const signIn = () => {
+  axios.post('https://thebetter.bsgroup.eu/Authorization/SignIn', {
+    // no data here.
+  })
+  .then(function (response) {
+    localStorage.setItem('token', response.data.AuthorizationToken.Token)
+  })
+  .catch(function (error) {
+    console.log('Error: ' + error);
+  });
+}
 
 function App() {
+
+  useEffect(() => {
+    signIn();
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <MediaList/>
     </div>
   );
 }

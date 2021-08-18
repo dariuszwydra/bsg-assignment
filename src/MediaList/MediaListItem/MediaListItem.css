@@ -1,0 +1,14 @@
+.mediaListItem {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexContainer img {
+  width: 100px;
+}
