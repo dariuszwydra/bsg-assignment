@@ -2,7 +2,6 @@ import './App.css';
 import axios from 'axios';
 import { useEffect } from 'react';
 import MediaList from './MediaList/MediaList.js';
-import MediaPlayer from './MediaPlayer/MediaPlayer.js';
 
 // function to log in as Anonymous user
 const signIn = () => {
@@ -21,12 +20,12 @@ function App() {
 
   useEffect(() => {
     signIn();
-  });
+  }, []);
 
   return (
-    <div>
+    <>
       <MediaList/>
-    </div>
+    </>
   );
 }
 

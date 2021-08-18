@@ -1,14 +1,36 @@
 .mediaListItem {
-  border: 1px solid black;
+  border: 1px solid white;
+  background: white;
   display: flex;
   flex-direction: row;
+  border-radius: 8px;
+  font-family: Helvetica;
+  margin: 8px 16px 8px 16px;
+  transition: transform .2s;
+  cursor: pointer;
+}
+
+.mediaListItem:hover {
+  transform: scale(1.01);
 }
 
 .flexContainer {
   display: flex;
   flex-direction: column;
+  padding: 16px;
+  justify-content: center;
 }
 
 .flexContainer img {
-  width: 100px;
+  width: 160px;
+  height: 90px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.description {
+  font-size: 16px;
+  margin-top: 8px;
 }

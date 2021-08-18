@@ -8,8 +8,8 @@ export default function MediaListItem(props) {
         <img src={props.images[0].Url} />
       </div>
       <div className='flexContainer'>
-        <span>{props.title}</span>
-        <span>{props.description}</span>
+        <span className='title'>{props.title}</span>
+        <span className='description'>{props.description}</span>
       </div>
     </div>
   )
